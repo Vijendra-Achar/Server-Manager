@@ -12,3 +12,11 @@ body {
 .margin-top {
   margin-top: 30px;
 }
+
+button:focus,
+button:active:focus,
+button.active:focus,
+span {
+  outline: none !important;
+  outline-style: none !important;
+}
