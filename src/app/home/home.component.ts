@@ -20,9 +20,24 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getData().subscribe((data: Data[]) => {
       this.dataSource.data = data;
+      this.treeControl.dataNodes = this.dataSource.data;
+      this.treeControl.expandAll();
     });
   }
 
-  hasChild = (_: number, node: FoodNode) =>
+  hasChild = (_: number, node: Data) =>
     !!node.children && node.children.length > 0;
+
+  startStop(event: Event, serverId: any) {
+    let currentValue = window.localStorage.getItem(serverId);
+    window.localStorage.setItem(
+      serverId,
+      currentValue === 'true' ? 'false' : 'true'
+    );
+  }
+
+  checkBtn(serverId) {
+    let currentValue = window.localStorage.getItem(serverId);
+    return currentValue === 'true' ? true : false;
+  }
 }

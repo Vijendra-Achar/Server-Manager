@@ -8,3 +8,14 @@
   margin-bottom: 0;
   list-style-type: none;
 }
+
+mat-nested-tree-node,
+mat-tree {
+  .mat-tree-node {
+    font-size: 1.5rem;
+  }
+
+  button {
+    margin: 15px;
+  }
+}
