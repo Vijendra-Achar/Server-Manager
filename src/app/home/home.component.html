@@ -8,8 +8,10 @@
         <!-- use a disabled button to provide padding for tree leaf -->
         <button mat-icon-button disabled></button>
         {{node.name}}
-        <button color="primary" (click)="startStop($event, node?.id)" mat-button>Start</button>
-        <button color="warn" (click)="startStop($event, node?.id)" mat-button>Stop</button>
+        <button color="primary" [disabled]="checkBtn(node?.id)" (click)="startStop($event, node?.id)" mat-button>{{
+          checkBtn(node?.id) === true ? 'Running...' : 'Start' }}</button>
+        <button [disabled]="!checkBtn(node?.id)" color="warn" (click)="startStop($event, node?.id)"
+          mat-button>Stop</button>
       </li>
     </mat-tree-node>
     <!-- This is the tree node template for expandable nodes -->
