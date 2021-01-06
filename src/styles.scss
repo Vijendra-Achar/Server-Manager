@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Montserrat;
 }
 
 .margin-top {
@@ -19,4 +20,26 @@ button.active:focus,
 span {
   outline: none !important;
   outline-style: none !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.custom-btn {
+  width: 200px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.main-heading {
+  font-weight: 700;
+}
+
+.sub-heading {
+  font-weight: 300;
+}
+
+.space-above {
+  margin-top: 65px;
 }
