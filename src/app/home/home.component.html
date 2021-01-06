@@ -1,6 +1,5 @@
 <div class="container">
 
-
   <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
     <!-- This is the tree node template for leaf nodes -->
     <mat-tree-node *matTreeNodeDef="let node; let i = index" matTreeNodeToggle>
@@ -8,10 +7,11 @@
         <!-- use a disabled button to provide padding for tree leaf -->
         <button mat-icon-button disabled></button>
         {{node.name}}
-        <button color="primary" [disabled]="checkBtn(node?.id)" (click)="startStop($event, node?.id)" mat-button>{{
+
+        <button color="primary" [disabled]="checkBtn(node?.id)" (click)="startStop(node?.id)" mat-button> {{
           checkBtn(node?.id) === true ? 'Running...' : 'Start' }}</button>
-        <button [disabled]="!checkBtn(node?.id)" color="warn" (click)="startStop($event, node?.id)"
-          mat-button>Stop</button>
+
+        <button [disabled]="!checkBtn(node?.id)" color="warn" (click)="startStop(node?.id)" mat-button>Stop</button>
       </li>
     </mat-tree-node>
     <!-- This is the tree node template for expandable nodes -->

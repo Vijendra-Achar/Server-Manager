@@ -25,4 +25,14 @@ export class ServerDataService {
         })
       );
   }
+
+  sendRequest(theId: string, state: string) {
+    return this.http.post(
+      `https://plnqfktz3l.execute-api.ap-south-1.amazonaws.com/test/resource-api`,
+      {
+        action: state,
+        id: theId,
+      }
+    );
+  }
 }
