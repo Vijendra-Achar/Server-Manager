@@ -1,14 +1,12 @@
 <div class="center">
 
   <h1 class="space-above main-heading">Login</h1>
-  <h3 class="sub-heading">Please enter your credentials to login</h3>
 
-  <br />
   <mat-error *ngIf="authErrors"> {{ authErrors?.message }}</mat-error>
   <br />
   <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <input type="email" formControlName="email" matInput required>
       <mat-hint>Example: hello@example.com</mat-hint>
@@ -17,7 +15,7 @@
     </mat-form-field>
     <br />
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
       <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput required>
       <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
@@ -31,14 +29,14 @@
       </mat-error>
     </mat-form-field>
 
+
     <br />
-    <br />
-    <button *ngIf="!loading" [disabled]="loginForm.invalid" type="submit" class="custom-btn" color="primary"
+    <button *ngIf="!loading" [disabled]="loginForm.invalid" type="submit" class="primary"
       mat-raised-button>Login</button>
-    <button *ngIf="loading" disabled class="custom-btn" color="primary" mat-raised-button>Logging you in ...</button>
+    <button *ngIf="loading" disabled mat-raised-button>Logging you in ...</button>
   </form>
 
   <div class="divider"> <strong>OR</strong> </div>
 
-  <button routerLink="/sign-up" class="custom-btn" color="primary" mat-raised-button>Sign up</button>
+  <button routerLink="/sign-up" class="secondary" mat-raised-button>Sign up</button>
 </div>

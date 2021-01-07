@@ -1,5 +1,6 @@
 <div class="container">
 
+
   <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
     <!-- This is the tree node template for leaf nodes -->
     <mat-tree-node *matTreeNodeDef="let node; let i = index" matTreeNodeToggle>
@@ -8,7 +9,8 @@
         <button mat-icon-button disabled></button>
         {{node.name}}
 
-        <button color="primary" [disabled]="checkBtn(node?.id)" (click)="startStop(node?.id, node?.name)" mat-button> {{
+        <button color="primary" [disabled]="checkBtn(node?.id)" (click)="startStop(node?.id, node?.name)" mat-button>
+          {{
           checkBtn(node?.id) === true ? 'Running...' : 'Start' }}</button>
 
         <button [disabled]="!checkBtn(node?.id)" color="warn" (click)="startStop(node?.id, node?.name)"

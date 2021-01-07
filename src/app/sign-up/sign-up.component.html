@@ -7,7 +7,7 @@
   <br />
   <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
       <input formControlName="name" matInput required type="text">
       <mat-hint>Must contain a minimum of 5 characters</mat-hint>
@@ -17,7 +17,7 @@
 
     <br />
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <input formControlName="email" matInput required type="email">
       <mat-hint>Enter a valid Email address. Example: hello@example.com</mat-hint>
@@ -26,7 +26,7 @@
     </mat-form-field>
     <br />
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
       <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput required>
       <mat-hint>Must contain a minimum of 8 characters</mat-hint>

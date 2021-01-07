@@ -1,26 +1,28 @@
 <mat-toolbar class="navbar" color="primary">
+  <div class="container">
 
-  <span class="logo">Server Manager</span>
-  <span class="example-spacer"></span>
-  <div>
+    <span routerLink="/" class="logo">Server Manager</span>
+    <span class="example-spacer"></span>
+    <div>
 
-    <button routerLink="/" mat-button class="example-icon" aria-label="Example icon-button with heart icon">
-      Home
-    </button>
-    <button routerLink="/dashboard" mat-button class="example-icon" aria-label="Example icon-button with heart icon">
-      Dashboard
-    </button>
-    <button *ngIf="!user" routerLink="/login" mat-button class="example-icon"
-      aria-label="Example icon-button with share icon">
-      Login
-    </button>
+      <button routerLink="/" mat-button class="example-icon" aria-label="Example icon-button with heart icon">
+        Home
+      </button>
+      <button routerLink="/dashboard" mat-button class="example-icon" aria-label="Example icon-button with heart icon">
+        Dashboard
+      </button>
+      <button *ngIf="!user" routerLink="/login" mat-button class="example-icon"
+        aria-label="Example icon-button with share icon">
+        Login
+      </button>
 
 
-    <button *ngIf="user" mat-button [matMenuTriggerFor]="menu">{{ user.displayName }}<mat-icon>keyboard_arrow_down
-      </mat-icon></button>
-    <mat-menu #menu="matMenu">
-      <button (click)="logout()" mat-menu-item>Logout</button>
-    </mat-menu>
+      <button *ngIf="user" mat-button [matMenuTriggerFor]="menu">{{ user.displayName }}<mat-icon>keyboard_arrow_down
+        </mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button (click)="logout()" mat-menu-item>Logout</button>
+      </mat-menu>
+    </div>
   </div>
 
 </mat-toolbar>
