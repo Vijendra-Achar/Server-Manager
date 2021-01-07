@@ -17,6 +17,7 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     DialogBoxComponent,
     LoginComponent,
     SignUpComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
