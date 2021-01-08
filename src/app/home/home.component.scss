@@ -5,6 +5,11 @@
   position: relative;
   padding: 60px 0px;
 
+  .my-btn {
+    padding: 10px 30px;
+    border: 1px #fff solid;
+  }
+
   h1 {
     font-size: 40px;
   }
@@ -20,25 +25,12 @@
     z-index: 100;
   }
 
-  button {
-    padding: 10px 30px;
-    border: 1px #fff solid;
-  }
-
   .flex {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
 .showcase::before,
@@ -56,8 +48,19 @@
 .stats {
   padding-top: 100px;
 
-  .text-center {
-    text-align: center;
+  .card {
+    // background-color: var(--my-primary);
+    padding: 5px;
+  }
+
+  i {
+    color: var(--my-primary);
+    margin: 15px;
+  }
+
+  h4,
+  p {
+    color: var(--my-primary);
   }
 
   .margin-stats {
@@ -67,6 +70,68 @@
   .grid {
     div {
       margin: 20px;
+    }
+  }
+}
+
+.pricing {
+  padding-top: 100px;
+
+  .my-btn {
+    background-color: var(--my-primary);
+    color: #fff;
+    width: 75%;
+    border: 0;
+  }
+
+  .features {
+    padding: 10px 25px 10px 25px;
+    text-align: left;
+  }
+
+  i {
+    padding: 3px;
+    padding-right: 10px;
+    margin-left: 10px;
+  }
+
+  .tag {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: rgb(145, 145, 145);
+  }
+
+  .price {
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .inactive {
+    color: rgb(145, 145, 145);
+  }
+
+  .grid {
+    gap: 30px;
+  }
+
+  .my-btn {
+    padding: 10px 30px;
+  }
+
+  .best-card {
+    background-color: var(--my-primary);
+
+    p {
+      color: #fff;
+    }
+
+    .price {
+      color: #fff;
+    }
+
+    .my-btn {
+      padding: 10px 30px;
+      border: 1px #fff solid;
     }
   }
 }

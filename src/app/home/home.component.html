@@ -8,7 +8,7 @@
       <p>
         Manage your remote servers with no hassle.
       </p>
-      <button mat-stroked-button>Go to dashboard</button>
+      <button class="my-btn" routerLink="/dashboard" mat-stroked-button>Go to dashboard</button>
     </div>
 
     <div class="showcase-img">
@@ -18,13 +18,12 @@
   </div>
 </section>
 
-
 <section class="stats">
   <div class="container">
-    <h4 class="stats-heading text-center margin-stats">
+    <h3 class="stats-heading text-center margin-stats">
       Welcome to the best Server management tool on the market!
-    </h4>
-    <div class="grid text-center m-3">
+    </h3>
+    <div class="grid text-center card m-3">
       <div>
         <i class="fas fa-server fa-2x"></i>
         <h4>1000+</h4>
@@ -40,6 +39,87 @@
         <h4>21,034</h4>
         <p>Active Projets</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <h3 class="stats-heading text-center margin-stats">
+      Choose the best plan for you
+    </h3>
+    <div class="grid text-center m-3">
+
+      <div class="card">
+        <p class="tag">FREE</p>
+        <div class="price">
+          &#8377; 0.00
+        </div>
+        <hr>
+        <div class="features">
+          <div class="container">
+            <p><i class="fas fa-check"></i>Single User</p>
+            <p><i class="fas fa-check"></i>5GB Storage</p>
+            <p><i class="fas fa-check"></i>Unlimited Public Projects</p>
+            <p><i class="fas fa-check"></i>Community Access</p>
+            <p class="inactive"><i class="fas fa-times"></i>Unlimited Private Projects</p>
+            <p class="inactive"><i class="fas fa-times"></i>Dedicated Phone Support</p>
+            <p class="inactive"><i class="fas fa-times"></i>Free Subdomain</p>
+            <p class="inactive"><i class="fas fa-times"></i>Monthly Status Reports</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="my-btn" mat-raised-button>Choose</button>
+        </div>
+      </div>
+
+
+      <div class="card best-card">
+        <p class="tag">PRO</p>
+        <div class="price">
+          &#8377; 1,599.00
+        </div>
+        <hr>
+        <div class="features">
+          <div class="container">
+            <p><i class="fas fa-check"></i>Single User</p>
+            <p><i class="fas fa-check"></i>5GB Storage</p>
+            <p><i class="fas fa-check"></i>Unlimited Public Projects</p>
+            <p><i class="fas fa-check"></i>Community Access</p>
+            <p><i class="fas fa-check"></i>Unlimited Private Projects</p>
+            <p><i class="fas fa-check"></i>Dedicated Phone Support</p>
+            <p class="inactive"><i class="fas fa-times"></i>Free Subdomain</p>
+            <p class="inactive"><i class="fas fa-times"></i>Monthly Status Reports</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="my-btn" mat-stroked-button>Choose</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="tag">PRO PLUS</p>
+        <div class="price">
+          &#8377; 2,999.00
+        </div>
+        <hr>
+        <div class="features">
+          <div class="container">
+            <p><i class="fas fa-check"></i>Single User</p>
+            <p><i class="fas fa-check"></i>5GB Storage</p>
+            <p><i class="fas fa-check"></i>Unlimited Public Projects</p>
+            <p><i class="fas fa-check"></i>Community Access</p>
+            <p><i class="fas fa-check"></i>Unlimited Private Projects</p>
+            <p><i class="fas fa-check"></i>Dedicated Phone Support</p>
+            <p><i class="fas fa-check"></i>Free Subdomain</p>
+            <p><i class="fas fa-check"></i>Monthly Status Reports</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="my-btn" mat-raised-button>Choose</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

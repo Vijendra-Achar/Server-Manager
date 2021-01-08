@@ -6,10 +6,6 @@
   --my-primary: #047aed;
 }
 
-// .content {
-//   margin-top: 64px;
-// }
-
 html,
 body {
   height: 100%;
@@ -51,6 +47,10 @@ span {
   text-align: center;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .custom-btn {
   width: 150px;
   height: 40px;
@@ -74,4 +74,17 @@ span {
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba($color: #000000, $alpha: 0.2);
   padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.my-btn {
+  padding: 10px 30px;
+  border: 1px #fff solid;
 }
