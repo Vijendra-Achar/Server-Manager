@@ -2,12 +2,17 @@ import { Data } from './data.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
+import { Overlay, OverlayRef } from '@angular/cdk/overlay';
+import { MatSpinner } from '@angular/material/progress-spinner';
+import { ComponentPortal } from '@angular/cdk/portal';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServerDataService {
-  constructor(private http: HttpClient) {}
+  private spinnerRef: OverlayRef = this.cdkSpinnerCreate();
+
+  constructor(private http: HttpClient, private overlay: Overlay) {}
 
   getData() {
     return this.http
@@ -34,5 +39,23 @@ export class ServerDataService {
         id: theId,
       }
     );
+  }
+
+  private cdkSpinnerCreate() {
+    return this.overlay.create({
+      hasBackdrop: true,
+      backdropClass: 'dark-backdrop',
+      positionStrategy: this.overlay
+        .position()
+        .global()
+        .centerHorizontally()
+        .centerVertically(),
+    });
+  }
+  showSpinner() {
+    this.spinnerRef.attach(new ComponentPortal(MatSpinner));
+  }
+  stopSpinner() {
+    this.spinnerRef.detach();
   }
 }

@@ -12,6 +12,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatTreeModule } from '@angular/material/tree';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 const MaterialComponets = [
   MatButtonModule,
@@ -25,6 +26,7 @@ const MaterialComponets = [
   MatInputModule,
   MatDialogModule,
   MatProgressSpinnerModule,
+  OverlayModule,
   MatMenuModule,
   MatTableModule,
   MatTreeModule,

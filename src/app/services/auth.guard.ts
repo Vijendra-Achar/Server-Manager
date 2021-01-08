@@ -35,7 +35,7 @@ export class AuthGuard implements CanActivate {
       tap((loggedIn) => {
         if (!loggedIn) {
           this.snackbarDailog.showSnackBar(
-            'You need to be logged in to access this route',
+            'You need to be logged in to access the Dashboard',
             'Dismiss',
             5000
           );

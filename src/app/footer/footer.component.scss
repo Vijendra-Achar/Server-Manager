@@ -1,0 +1,35 @@
+.footer {
+  margin-top: 75px;
+  background-color: var(--my-secondary);
+  padding: 30px;
+  color: #fff;
+
+  .links {
+    li {
+      list-style: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    a:hover {
+      color: rgb(102, 102, 255);
+      transition: 0.3s;
+    }
+  }
+
+  .social {
+    i {
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    i:hover {
+      color: rgb(124, 124, 230);
+      transition: 0.5s;
+    }
+  }
+}

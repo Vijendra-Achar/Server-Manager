@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { SnackBarDailogBoxService } from './../services/snack-bar-dailog-box.service';
 import { ServerDataService } from './../services/server-data.service';
@@ -17,16 +18,25 @@ export class DashboardComponent implements OnInit {
 
   isLoading: boolean = false;
 
+  user: firebase.default.User;
+
   constructor(
     private dataService: ServerDataService,
-    private snackDialog: SnackBarDailogBoxService
+    private snackDialog: SnackBarDailogBoxService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    this.dataService.showSpinner();
     this.dataService.getData().subscribe((data: Data[]) => {
       this.dataSource.data = data;
       this.treeControl.dataNodes = this.dataSource.data;
       this.treeControl.expandAll();
+      this.dataService.stopSpinner();
+    });
+
+    this.authService.getUserState().subscribe((user) => {
+      this.user = user;
     });
   }
 
@@ -35,7 +45,7 @@ export class DashboardComponent implements OnInit {
 
   startStop(serverId: any, serverName: string) {
     let currentValue = window.localStorage.getItem(serverId);
-    this.isLoading = true;
+
     if (currentValue === 'true') {
       this.snackDialog
         .showDialogBox(
@@ -45,6 +55,7 @@ export class DashboardComponent implements OnInit {
         .afterClosed()
         .subscribe((ans) => {
           if (ans === 'true') {
+            this.dataService.showSpinner();
             this.dataService
               .sendRequest(serverId, 'stop')
               .pipe(take(1))
@@ -56,12 +67,13 @@ export class DashboardComponent implements OnInit {
                     'Dismiss',
                     5000
                   );
-                  this.isLoading = false;
+                  this.dataService.stopSpinner();
                 }
               });
           }
         });
     } else {
+      this.dataService.showSpinner();
       this.dataService
         .sendRequest(serverId, 'start')
         .pipe(take(1))
@@ -73,7 +85,7 @@ export class DashboardComponent implements OnInit {
               'Dismiss',
               5000
             );
-            this.isLoading = false;
+            this.dataService.stopSpinner();
           }
         });
     }
