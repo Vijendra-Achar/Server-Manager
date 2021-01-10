@@ -22,7 +22,8 @@ export class AuthService {
     private angularFireAuth: AngularFireAuth,
     private angularFirestore: AngularFirestore,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private snackDialog: SnackBarDailogBoxService
   ) {}
 
   getUserState() {
@@ -39,13 +40,11 @@ export class AuthService {
           displayName: name,
         });
 
-        this.saveUsertoDatabase(userCred, name, email).then((data) => {
-          this.snackBar.open(
-            'Your account was successfully created and Logged In',
+        this.saveUsertoDatabase(userCred, name, email).then(() => {
+          this.snackDialog.showSnackBar(
+            `Your account was successfully created! Welcome ${name}`,
             'Dismiss',
-            {
-              duration: 5000,
-            }
+            5000
           );
         });
       })
@@ -71,9 +70,11 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((userCred) => {
         this.$currentUser = userCred.user;
-        this.snackBar.open('Login successful', 'Dismiss', {
-          duration: 5000,
-        });
+        this.snackDialog.showSnackBar(
+          `Login Successful! Welcome back ${this.$currentUser.displayName}`,
+          'Dismiss',
+          5000
+        );
         this.router.navigate(['/']);
       })
       .catch((error) => {
