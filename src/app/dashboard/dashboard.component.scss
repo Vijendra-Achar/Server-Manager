@@ -9,11 +9,29 @@
   list-style-type: none;
 }
 
+.email-highlight {
+  color: var(--my-primary);
+}
+
+.server {
+  color: #369;
+  font-weight: 700;
+}
+
+.mat-icon-rtl-mirror,
+i {
+  color: var(--my-primary);
+}
+
+i {
+  margin-left: 10px;
+}
+
 mat-nested-tree-node,
 mat-tree {
   .mat-tree-node {
-    font-size: 1.2rem;
     font-family: Lato;
+    font-size: 1.2em;
   }
 
   button {
@@ -21,6 +39,46 @@ mat-tree {
   }
 }
 
-.email-highlight {
-  color: var(--my-primary);
+// Tree Styling
+
+// ul {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+// }
+// ul {
+//   margin-left: 10px;
+// }
+
+li {
+  margin: 0;
+  padding: 0 7px;
+  line-height: 20px;
+  color: #369;
+  font-weight: bold;
+  border-left: 1px solid rgb(100, 100, 100);
 }
+
+li:first-child {
+  position: relative;
+  content: "";
+  // color: white;
+}
+
+// li:last-child {
+//   border-left: none;
+// }
+// li:before {
+//
+//   top: -0.3em;
+//   height: 1em;
+//   width: 12px;
+//   color: white;
+//   border-bottom: 1px solid rgb(100, 100, 100);
+//   content: "";
+//   display: inline-block;
+//   left: -7px;
+// }
+// li:last-child:before {
+//   border-left: 1px solid rgb(100, 100, 100);
+// }
